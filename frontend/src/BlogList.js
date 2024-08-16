@@ -1,15 +1,12 @@
-const BlogList = (props) => {
-    const blogs = props.blogsBs7Mbdla
-
-    console.log(blogs, props)
-
+const BlogList = ({blogsBs7Mbdla, handleDelete}) => {
 
     return ( 
         <div className="blog-list">
-            {blogs.map((blog) => (
+            {blogsBs7Mbdla.map((blog) => (
                 <div className="blog-preview" key={blog.id}>
                     <h2>{blog.title}</h2>
                     <p>Written by: {blog.author}</p>
+                    <button onClick={() => handleDelete(blog.id)}>Delete blog</button>
                 </div>
             ))}
         </div>
